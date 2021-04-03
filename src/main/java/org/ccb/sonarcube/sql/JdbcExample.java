@@ -18,8 +18,8 @@ public class JdbcExample {
 		statement.execute("INSERT INTO PERSON VALUES ('test', 'user')");
 		statement.execute("INSERT INTO PERSON VALUES ('test2', 'user')");
 		
-		String searchedUser = "test";
-		ResultSet resultSet = statement.executeQuery("SELECT * FROM PERSON WHERE name like '" +searchedUser + "'" );
+		String searchedUser = (args.length == 0) ? "test" : args[0];
+		ResultSet resultSet = statement.executeQuery("SELECT * FROM PERSON WHERE name = '" +searchedUser + "'" );
 		getRecords(resultSet).stream().forEach(System.out::println);
 		connection.close();
 	}
