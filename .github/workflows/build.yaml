@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - flaws
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
