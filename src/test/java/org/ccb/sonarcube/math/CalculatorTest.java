@@ -1,14 +1,13 @@
 package org.ccb.sonarcube.math;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class CalculatorTest {
 
 	@Test
-	void shouldAdd() {
+	public void shouldAdd() {
 		Calculator calc = new Calculator();
-		double result = calc.add(1, 5);
-		Assertions.assertEquals(6.0, result);
+		double result = calc.add(1.0, 5.0);
+		org.junit.Assert.assertEquals(6.0, result,2);
 	}
 }
